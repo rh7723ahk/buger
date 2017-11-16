@@ -1,0 +1,45 @@
+<div class="container">
+        <!-- Burger List -->
+        <div id="burger-list" class="col-sm-4">
+            <div class="well well-lg">
+                {{#each burgers }}
+                    {{#unless devoured}}
+                        <div class="well well-sm">
+        					<h4>{{burger_name}}</h4>
+        					<button id="devour-btn" class="btn btn-danger" data-id="{{id}}">devour</button>
+                        </div>
+                    {{/unless}}
+                {{/each}}
+            </div>
+        </div>
+        <!-- Devoured Burgers -->
+        <div id="burger-devoured" class="col-sm-4">
+            <div class="well well-lg">
+                {{#each burgers}}
+                    {{#if devoured}}
+                        <div class="well well-sm">
+                            <h4>{{burger_name}}</h4>
+                        </div>
+                    {{/if}}
+                {{/each}}
+            </div>
+        </div>
+        <!-- Burger Entry -->
+        <div class="col-md-4"></div>
+        <div id="burger-entry" class="col-md-4">
+            <form class="form-horizontal" action="/" method="POST">
+                <fieldset>
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <textarea class="form-control" name="burger" rows="3" id="textArea" placeholder="i'm the name of a burger"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-warning">submit</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+     <!-- End Main Container -->
+</div>
